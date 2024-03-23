@@ -1,0 +1,258 @@
+:root {
+  --clr-main-page-heading: 0;
+}
+/* general css resets */
+
+/*        *beginning notes to self*
+
+
+html:focus-within {       *moved to and @media for accessibility* 
+  scroll-behavior: smooth; 
+}
+*/
+/*
+
+* only add  dark/ light in if I have extra time 
+
+if I do this I will need to set up @media (prefers-color-scheme: dark) with root colors for dark screen and an @media light root colors for light screens, add in a theme selection - in case they want to override their prefered preference settings. and will need to add a few lines of js 
+*/
+
+/*         * box sizing rules and color scheme  */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  color-scheme: dark;
+}
+
+/*              *removes default margins and fonts  */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html,
+body {
+  line-height: 1.5;
+}
+
+body {
+  /* text-rendering: optimizeSpeed;*   may need addition accessibility @media     */
+  overflow-x: hidden;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+  max-width: 75ch;
+  margin-bottom: 1.5rem;
+}
+/* :has(:tagert) selector doesnt have complete browser support */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+  }
+}
+
+/* to check area/spacing 
+.container{
+    border: 1px solid rgb(57, 113, 82);
+}
+
+h1,
+h2 {
+  line-height: 1.2;
+}
+*/
+/* head/nav styling */
+.head-container {
+  display: flex;
+  padding: 5rem;
+  align-items: center;
+  justify-content: space-between;
+  border: yellowgreen solid;
+}
+.logo-container {
+  margin: 2rem;
+}
+.intro-text-wrap {
+  font-size: larger;
+  margin-inline: auto;
+
+  /* at small media screens  min-width: 100%;   */
+  border: rgb(244, 238, 238) solid;
+  padding: 3rem;
+}
+.intro-text {
+}
+
+.mobile-menu {
+  display: none;
+}
+.visually-hidden {
+  position: absolute;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+.nav-container {
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+}
+.main-nav {
+  display: flex;
+  list-style: none;
+  gap: 3em;
+  padding: 0;
+  margin: 0;
+  background: hsla(157, 50%, 69%, 0.1);
+  backdrop-filter: blur(1rem);
+}
+.main-nav a {
+  text-decoration: none;
+
+  color: rgb(184, 123, 0);
+}
+/*                    * mobile nav features *                   */
+@media (max-width: 35em) {
+  .main-nav {
+    position: fixed;
+    inset: 0 0 0 30%;
+    flex-direction: column;
+    padding: min(30vh, 10rem) 2em;
+    gap: 1.5rem;
+    transform: translateX(100%);
+    z-index: 1000;
+  }
+
+  .main-nav[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  .mobile-menu {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    border-radius: 0.5rem;
+    width: 2rem;
+    border-color: rgba(120, 88, 150, 0.9);
+    aspect-ratio: 1;
+    top: 2rem;
+    right: 2rem;
+  }
+}
+/*  general styling 1110 px 1.1rem */
+
+.container,
+.nav-container {
+  --max-width: 1300px; /* change unit */
+  --padding: 1rem;
+
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
+}
+.columns {
+  display: grid;
+  gap: 1rem;
+  padding: 0.2rem;
+}
+@media (min-width: 50em) {
+  .main-nav a {
+    margin-inline-end: 4em;
+  }
+  .columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    padding: 1.5rem;
+  }
+}
+.padding {
+  padding-block: 3.5rem;
+}
+
+.section-container {
+  padding: 0.25rem;
+}
+a {
+  text-decoration: none;
+  color: darkolivegreen;
+}
+footer {
+  background-color: slategray;
+}
+.social-link {
+  color: white;
+}
+/* resouce selection styling*/
+
+.resource:not(:last-child):not(:has(+ [hidden])) {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid whitesmoke;
+}
+.selection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border: 0;
+  padding: 0;
+}
+@media (max-width: 35em) {
+  .selection-btn,
+  .selection {
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    gap: 0.1rem;
+  }
+}
+
+.resource-list {
+  list-style: none;
+  padding: o;
+}
+.selection-btn {
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  border-radius: 0.25rem;
+  padding: 0.25rem 1rem;
+}
+.selection-btn:hover,
+.selection-btn:focus {
+  background-color: rgba(217, 155, 243, 0.556);
+  text-shadow: 2px 2px 2px rgba(14, 15, 15, 0.2);
+}
+.selection-btn.active {
+  pointer-events: none;
+  background: rgb(60, 147, 122);
+  color: aliceblue;
+  box-shadow: 0 1.5em 1em -1em rgb(23, 61, 61);
+}
+
+/* View transitions for DOM manipulation */
+/* Note on: View transitions- can NOT have multiple elements sharing a transition name, used js to give each its own a name */
