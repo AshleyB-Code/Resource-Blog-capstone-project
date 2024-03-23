@@ -87,10 +87,17 @@ h2 {
   align-items: center;
   justify-content: space-between;
   border: yellowgreen solid;
+  background-color: rgb(14, 70, 70);
+  background-image: url(images/retro\ media\ background\ .jpg);
+  background-size: cover;
+  background-blend-mode: lighten;
+  color: black;
 }
+
 .logo-container {
   margin: 2rem;
 }
+
 .intro-text-wrap {
   font-size: larger;
   margin-inline: auto;
