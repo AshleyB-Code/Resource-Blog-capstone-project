@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="form.css" />
+  <script src="form.js" defer></script>
+  <title>Multi Step Form</title>
+</head>
+
+<body>
+  <form class="form" data-form>
+    <div class="card active" data-info-request>
+      <h3 class="request-title">Contact Information</h3>
+      <div class="form-selection">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" />
+      </div>
+      <div class="form-selection">
+        <label for="pronouns">Preferred Pronouns</label>
+        <input type="text" name="pronouns" id="pronouns" />
+      </div>
+      <div class="form-selection">
+        <label for="email">Email</label>
+        <input required type="email" name="email" id="email" title="please include a valid email address" />
+      </div>
+      <button type="button" data-next>Next</button>
+    </div>
+    <div class="card" data-info-request>
+      <h3 class="request-title">What's Your Focus</h3>
+      <div class="form-slection focus">
+        <label for="html">Html
+          <input type="checkbox" name="html" id="html" />
+        </label>
+
+        <label for="css">CSS
+          <input type="checkbox" name="css" id="css" />
+        </label>
+
+        <label for="js">JS
+          <input type="checkbox" name="js" id="js" />
+        </label>
+      </div>
+
+
+      <button type="button" data-previous>Previous</button>
+      <button type="button" data-next>Next</button>
+    </div>
+    <div class="card" data-info-request>
+      <h3 class="request-title">The Fun Part</h3>
+      <div class="form-selection">
+        <label for="textarea">What's on Your Mind</label>
+
+        <textarea name="textarea" id="textarea" cols="30" rows="15"></textarea>
+      </div>
+      <button type="button" data-previous>Previous</button>
+      <button type="button" data-next>Next</button>
+    </div>
+    <div class="card" data-info-request>
+      <h3 class="request-title">Ready to Contribute</h3>
+      <button type="button" data-previous>Previous</button>
+      <button type="submit" data-submit>Submit</button>
+    </div>
+  </form>
+</body>
+
+</html>
