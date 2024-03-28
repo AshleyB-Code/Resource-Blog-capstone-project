@@ -97,12 +97,18 @@ const requestOptions = {
   redirect: 'follow'
 };
 let basketName = document.getElementById('email').value;
-
-await fetch(`https://getpantry.cloud/apiv1/pantry/92475a56-66e0-43d9-8f3a-5d99e1da5112/basket/${basketName}`, requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-   .catch(error => console.log('error', error));
-  };
+try{
+  const response = await fetch(`https://getpantry.cloud/apiv1/pantry/92475a56-66e0-43d9-8f3a-5d99e1da5112/basket/${basketName}`, requestOptions)
   
-
+  await response.text();
+  
+   } catch(err) {
+  console.log ('error', err);
+} 
+finally{
+  modal.close();
+}
+ };
+  
+  
 
