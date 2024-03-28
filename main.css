@@ -13,11 +13,25 @@
 
 :root {
   --clr-main-heading: 0;
-}
- {
+
   --ff-heading: ;
   --ff-normal: ;
+
+  /* custom shadows*/
+  --text-shadow-heading: -1px 2px 0.25px rgb(80, 46, 95),
+    1px 1px 0.12px rgb(0, 0, 0), -1px 1px 0.12px rgb(0, 0, 0),
+    -0.5px 1px 0 rgb(0, 10, 9), 1px -0.5px 0.12px rgb(203, 132, 214);
+
+  --box-shadow-layered: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+
+  --box-shadow-neon-filter: drop-shadow(
+    1px 2px 8px var(--head-text-shadow-color)
+  );
+  --head-text-shadow-color: rgb(177, 100, 11);
 }
+
 /* general css resets */
 
 /*        *beginning notes to self*
@@ -60,6 +74,7 @@ body {
   /* text-rendering: optimizeSpeed;*   may need addition accessibility @media     */
   overflow-x: hidden;
   font-family: "mali";
+  background-color: rgb(38, 72, 72);
 }
 
 img,
@@ -106,11 +121,12 @@ h2 {
   align-items: center;
   justify-content: center;
 
-  border: yellowgreen solid;
+  border: 0;
   background-color: rgb(15, 101, 101);
   background-image: url(images/retro\ media\ background\ .jpg);
   background-size: cover;
   background-blend-mode: lighten;
+  box-shadow: 0px 8px 18px 2px rgba(39, 185, 170, 0.788);
 }
 
 .intro-text-wrap {
@@ -122,14 +138,13 @@ h2 {
 }
 .intro-text {
   font-family: "rampartone";
-  font-size: 46px;
+  font-size: 40px;
   color: rgba(8, 8, 8, 0.866);
   text-align: center;
-  text-shadow: -1px 2px 0.25px rgb(80, 46, 95), 1px 1px 0.12px rgb(0, 0, 0),
-    -1px 1px 0.12px rgb(0, 0, 0), -0.5px 1px 0 rgb(0, 10, 9),
-    1px -0.5px 0.12px rgb(203, 132, 214);
-  background-color: rgba(233, 148, 30, 0.83);
-  box-shadow: -2px 3px 2px rgb(177, 100, 11);
+  text-shadow: var(--text-shadow-heading);
+  background-color: rgba(233, 148, 30, 0.745);
+  box-shadow: -1px 3px 2px;
+  filter: var(--box-shadow-neon-filter);
   border-radius: 1550px 1550px 900px 900px;
   border: 0;
   padding: 0;
@@ -161,10 +176,10 @@ h2 {
   list-style: none;
   gap: 3em;
   padding: 0;
-
-  margin: 0;
+  box-shadow: var(--box-shadow-layered);
   background: hsla(157, 50%, 69%, 0.1);
   backdrop-filter: blur(1rem);
+  margin: 0;
 }
 .main-nav a {
   text-decoration: none;
@@ -202,6 +217,10 @@ h2 {
   .intro-text {
     padding: 0.5em;
     font-size: 30px;
+  }
+  .intro-text {
+    font-size: 20px;
+    text-shadow: 0 0;
   }
 }
 /*  general styling 1110 px 1.1rem */
@@ -248,8 +267,11 @@ a {
   color: darkolivegreen;
 }
 footer {
+  padding: 2rem;
+
   background-color: slategray;
 }
+
 .social-link {
   color: white;
 }
