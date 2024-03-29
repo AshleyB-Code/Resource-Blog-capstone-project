@@ -234,6 +234,14 @@ a:focus {
     font-size: 20px;
     text-shadow: 0 0;
   }
+  .footer-padding,
+  .social-container {
+    display: flex;
+
+    margin: 0;
+    padding: 0.2rem;
+    gap: 0rem;
+  }
 }
 /*  general styling 1110 px 1.1rem */
 
@@ -279,14 +287,25 @@ a {
   color: darkolivegreen;
 }
 footer {
-  padding: 2rem;
-
+  display: grid;
+  padding: 1rem;
+  margin-inline: center;
   background-color: slategray;
 }
+.social-container {
+  display: grid;
+  grid-auto-flow: column;
 
+  padding: 1.5rem;
+}
 .social-link {
+  grid-auto-columns: 1fr;
   border: 0;
   color: white;
+  padding: 1rem;
+}
+.foot-note {
+  font-weight: bold;
 }
 /* resouce selection styling*/
 
