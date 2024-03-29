@@ -3,6 +3,6 @@ Started out as a learning resource blog, however I ended up deciding to work on 
 
 My project is a single page format and includes-
 A resource area filter by format type,
-A dialog contant form, 
+A dialog contact form, 
 nav links, 
 mobile nav menu. 
