@@ -13,13 +13,13 @@ const visibility = mainNav.getAttribute('data-visible')
 if (visibility === "false" ) {
      mainNav.setAttribute('data-visible', true);
      navToggle.setAttribute('aria-expanded', true);
-     mobileNav.setAttribute('data-open', true);
+     
    
      
 } else if (visibility === "true" ) {
     mainNav.setAttribute('data-visible', false);
     navToggle.setAttribute('aria-expanded',false);
-    mobileNav.setAttribute('data-open', false);
+  
     
 }
 
