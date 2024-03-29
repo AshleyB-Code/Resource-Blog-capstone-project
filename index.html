@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="nav.js" defer></script>
   <script src="resources.js" defer></script>
+  <script src="form.js" defer></script>
 
   <title>Learning to Code: A Resource Blog</title>
 </head>
@@ -27,12 +28,12 @@
   </header>
   <div class="nav-container">
     <nav id="main-nav" data-visible="false" class="main-nav">
-      <a href="#">Home</a>
-      <a href="#code">CodeType</a>
-      <a href="#resources">Resources</a>
-      <a href="#form">Contact</a>
+      <a class="mobile-link" data-open="false" href="#">Home</a>
+      <a class="mobile-link" data-open="" href="#code">CodeType</a>
+      <a class="mobile-link" data-open="" href="#resources">Resources</a>
+      <a class="mobile-link" data-open="" href="#form">Contact</a>
 
-      <a href="#connect">Socials</a>
+      <a class="mobile-link" data-open="" href="#connect">Socials</a>
     </nav>
   </div>
   <main class="container">
@@ -212,6 +213,68 @@
           </li>
         </ul>
       </div>
+    </article>
+    <article>
+      <button id="form" class="modal-btn-open">Contact Form</button>
+      <dialog class="modal" id="modal">
+        <form method="dialog" class="form" data-form>
+          <div class="card active" data-info-request>
+            <h3 class="request-title">Contact Information</h3>
+            <div class="form-selection">
+              <label for="name">Name</label>
+              <input type="text" name="name" id="name" />
+            </div>
+            <div class="form-selection">
+              <label for="pronouns">Preferred Pronouns</label>
+              <input type="text" name="pronouns" id="pronouns" />
+            </div>
+            <div class="form-selection">
+              <label for="email">Email</label>
+              <input required type="email" name="email" id="email" />
+            </div>
+            <button class="close-btn" formmethod="dialog" type="submit" value="Novalidate close"
+              formnovalidate>Cancel</button>
+            <button type="button" data-next>Next</button>
+          </div>
+          <div class="card" data-info-request>
+            <h3 class="request-title">What's Your Focus</h3>
+            <div class="form-slection focus">
+              <label for="html">Html
+                <input type="checkbox" name="html" id="html" />
+              </label>
+
+              <label for="css">CSS
+                <input type="checkbox" name="css" id="css" />
+              </label>
+
+              <label for="js">JS
+                <input type="checkbox" name="js" id="js" />
+              </label>
+            </div>
+
+
+            <button type="button" data-previous>Previous</button>
+            <button type="button" data-next>Next</button>
+          </div>
+          <div class="card" data-info-request>
+            <h3 class="request-title">The Fun Part</h3>
+            <div class="form-selection">
+              <label for="textarea">What's on Your Mind</label>
+
+              <textarea name="textarea" id="textarea" cols="25" rows="10"></textarea>
+            </div>
+            <button type="button" data-previous>Previous</button>
+            <button type="button" data-next>Next</button>
+          </div>
+          <div class="card" data-info-request>
+            <h3 class="request-title">Ready to Contribute</h3>
+            <button type="button" data-previous>Previous</button>
+            <button class="close-btn" id="cancel-submit">Cancel</button>
+            <button class="close-btn" title="Submit Completed" type="submit" formmethod="dialog" value="submit"
+              data-submit>Submit</button>
+          </div>
+        </form>
+      </dialog>
     </article>
   </main>
   <footer class="padding">
