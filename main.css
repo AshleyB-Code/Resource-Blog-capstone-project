@@ -285,7 +285,7 @@ a:focus {
 }
 a {
   text-decoration: none;
-  color: darkolivegreen;
+  color: rgb(176, 162, 206);
 }
 footer {
   display: grid;
