@@ -339,6 +339,7 @@ footer {
   opacity: 0.75;
 }
 .modal {
+  margin-inline: auto;
   padding: 1em;
   overflow: hidden;
   border: 0;
@@ -349,9 +350,7 @@ footer {
     rgba(128, 0, 128, 0.276)
   );
 
-  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
-    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
-    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+  box-shadow: var(--box-shadow-layered);
 }
 .card {
   display: none;
@@ -381,7 +380,7 @@ footer {
 .form-selection > label {
   font-weight: bold;
   font-size: 0.8em;
-  color: #333;
+  color: #350742;
 }
 .form-selection > input,
 .form-selection > textarea {
@@ -411,7 +410,7 @@ footer {
   display: block;
   animation: slide 250ms 125ms ease-in-out both;
 }
-.form-container {
+.form {
   overflow: hidden;
   position: relative;
 }
