@@ -366,6 +366,7 @@ footer {
   padding: 0.5rem;
   max-width: 320px;
   margin: 0 auto;
+  margin-bottom: 0.25rem;
   animation: fade 500ms ease-in-out forwards;
 }
 .form-selection {
@@ -413,6 +414,15 @@ footer {
 .form {
   overflow: hidden;
   position: relative;
+}
+.contact-btn {
+  display: block;
+
+  margin-bottom: 1rem;
+}
+.form-article {
+  display: grid;
+  justify-content: center;
 }
 
 @keyframes slide {
