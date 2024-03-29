@@ -221,6 +221,7 @@ a:focus {
     border-radius: 0.5rem;
     width: 2rem;
     border-color: rgba(120, 88, 150, 0.9);
+    background-color: rgb(117, 72, 117);
     aspect-ratio: 1;
     top: 0.85rem;
     right: 1.25rem;
